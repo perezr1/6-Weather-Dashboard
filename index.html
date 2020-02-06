@@ -26,10 +26,11 @@
         </div>
     </nav>
 
+    
     <!-- Page Content -->
     <div class="container">
-
-    <br>
+        
+        <br>
         <!-- This is my search bar -->
         <div class="container-fluid float-left row" id="searchRow">
             <div class="col-sm-12" id="colText">
@@ -42,7 +43,56 @@
                 </div>
             </div>
         </div>
+        
+        <!-- this is the result box -->
+        <div class="container-fluid float-right row" id="headRow">
+            <div class="col-sm-12" id="colText">
+                <h2 class="font-weight-light" id="localCityName">City:</h2>
+                <h2 class="font-weight-light" id="localCityDate">Date:</h2>
+                <img id="weatherIcon">
+                <ul class="list-inline" id="current_city">
+                    <li id="temp">Temperature:</li>
+                    <li id="humidity">Humidity:</li>
+                    <li id="windspd">Windspeed:</li>
+                    <li id="uvIndex">UV Index:<span id="uv"></span></li>
+                </ul>
+                <hr>
+            </div>
 
+            <!-- this is my 5 day forecast box -->
+            <h2>Five Day Forecast:</h2><br>
+            <div class="container-fluid row" id="forecastBox">
+                <div class="col-sm-2 col-md-offset-1 forecast">
+                    <div id="day-1">Day 1</div>
+                    <img id="icon-1">
+                    <div id="temp1"></div>
+                    <div id="humidityDay1"></div>
+                </div>
+                <div class="col-sm-2 forecast">
+                    <div id="day-2">Day 2</div>
+                    <img id="icon-2">
+                    <div id="temp2"></div>
+                    <div id="humidityDay2"></div>
+                </div>
+                <div class="col-sm-2 forecast">
+                    <div id="day-3">Day 3</div>
+                    <img id="icon-3">
+                    <div id="temp3"></div>
+                    <div id="humidityDay3"></div>
+                </div>
+                <div class="col-sm-2 forecast">
+                    <div id="day-4">Day 4</div>
+                    <img id="icon-4">
+                    <div id="temp4"></div>
+                    <div id="humidityDay4"></div>
+                </div>
+                <div class="col-sm-2 forecast">
+                    <div id="day-5">Day 5</div>
+                    <img id="icon-5">
+                    <div id="temp5"></div>
+                    <div id="humidityDay5"></div>
+                </div>
+            </div>
     </div>
 
     <!-- this is my list of Cities -->
