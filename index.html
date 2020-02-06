@@ -13,9 +13,43 @@
 
     <!-- Link to my css -->
     <link rel="stylesheet" href="style.css">
-    </head>
+    <script src="https://kit.fontawesome.com/e1ade17ca6.js" crossorigin="anonymous"></script>
+</head>
 
 <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container ">
+            <a class="navbar-brand text-center" href="#">Weather Dashboard</a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+    <br>
+        <!-- This is my search bar -->
+        <div class="container-fluid float-left row" id="searchRow">
+            <div class="col-sm-12" id="colText">
+                <h3>Search for a City:</h3>
+                <div class="input-group">
+                    <input type="text" onfocus="this.value=''" class="form-control" id="input_listName">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="btn_createList"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- this is my list of Cities -->
+
+    
+    <!-- /.container -->
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -29,8 +63,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-        <!-- link to my script.js file -->
-        <script src="script.js"></script>
+    <!-- link to my script.js file -->
+    <script src="script.js"></script>
 </body>
 
 </html>
