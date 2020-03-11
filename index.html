@@ -12,109 +12,105 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Link to my css -->
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/e1ade17ca6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container ">
-            <a class="navbar-brand text-center" href="#">Weather Dashboard</a>
-        </div>
-        </div>
+    <nav class="navbar bg-dark text-white justify-content-center">
+        <a class="navbar-brand">Weather Dashboard</a>
     </nav>
 
-    
-    <!-- Page Content -->
-    <div class="container">
-        
-        <br>
-        <!-- This is my search bar -->
-        <div class="container-fluid float-left row" id="searchRow">
-            <div class="col-sm-12" id="colText">
-                <h3>Search for a City:</h3>
-                <div class="input-group">
-                    <input type="text" onfocus="this.value=''" class="form-control" id="input_listName">
+    <div class="container" id=" main">
+        <div class="row mb-2">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="input-group mb-3" style="width: 100%;">
+                    <input id="search-input" type="city" name="city" class="form-control"
+                        placeholder="Please enter a city" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="button" id="btn_createList"><i class="fas fa-search"></i></button>
+                        <button id="searchBtn" class="btn btn-light"
+                            style="background-color: slategrey; color: floralwhite;" type="button">Search</button>
                     </div>
+                </div>
+                <ul id="city-list" class="list-group list-group-flush">
+                </ul>
+            </div>
+
+            <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><span id="cityName"></span> - <span class="date"></span><span
+                                id="icon"></span></h5>
+                    </div>
+                    <ul class="list-group list-group-flush mb-2">
+                        <li class="list-group-item">Temperature: <span id="temp"></span> °F</li>
+                        <li class="list-group-item">Humidity: <span id="humid"></span> %</li>
+                        <li class="list-group-item">Wind Speed: <span id="wind"></span> mph</li>
+                        <li class="list-group-item">UV Index: <span id="uv"
+                                class="rounded border border-danger bg-danger text-white"></span></li>
+                    </ul>
                 </div>
             </div>
         </div>
-        
-        <!-- this is the result box -->
-        <div class="container-fluid float-right row" id="headRow">
-            <div class="col-sm-12" id="colText">
-                <h2 class="font-weight-light" id="localCityName">City:</h2>
-                <h2 class="font-weight-light" id="localCityDate">Date:</h2>
-                <img id="weatherIcon">
-                <ul class="list-inline" id="current_city">
-                    <li id="temp">Temperature:</li>
-                    <li id="humidity">Humidity:</li>
-                    <li id="windspd">Windspeed:</li>
-                    <li id="uvIndex">UV Index:<span id="uv"></span></li>
-                </ul>
-                <hr>
-            </div>
-
-            <!-- this is my 5 day forecast box -->
-            <h2>Five Day Forecast:</h2><br>
-            <div class="container-fluid row" id="forecastBox">
-                <div class="col-sm-2 col-md-offset-1 forecast">
-                    <div id="day-1">Day 1</div>
-                    <img id="icon-1">
-                    <div id="temp1"></div>
-                    <div id="humidityDay1"></div>
-                </div>
-                <div class="col-sm-2 forecast">
-                    <div id="day-2">Day 2</div>
-                    <img id="icon-2">
-                    <div id="temp2"></div>
-                    <div id="humidityDay2"></div>
-                </div>
-                <div class="col-sm-2 forecast">
-                    <div id="day-3">Day 3</div>
-                    <img id="icon-3">
-                    <div id="temp3"></div>
-                    <div id="humidityDay3"></div>
-                </div>
-                <div class="col-sm-2 forecast">
-                    <div id="day-4">Day 4</div>
-                    <img id="icon-4">
-                    <div id="temp4"></div>
-                    <div id="humidityDay4"></div>
-                </div>
-                <div class="col-sm-2 forecast">
-                    <div id="day-5">Day 5</div>
-                    <img id="icon-5">
-                    <div id="temp5"></div>
-                    <div id="humidityDay5"></div>
-                </div>
-            </div>
     </div>
 
-    <!-- this is my list of Cities -->
+    <div class="container" id=" main">
+        <div class="mb-5">
 
-    
-    <!-- /.container -->
+            <div class="card-body">
+                <h5 class="card-title">5-day Forecast</h5>
+            </div>
 
+            <div class="card-group">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+                <div class="card">
+                    <li class="list-group-item border-0 bg-primary"><span class="date"></span></li>
+                    <li class="list-group-item border-0 bg-primary"><span id="day1"></span></li>
+                    <li class="list-group-item border-0 bg-primary"><span id="icon1"></span></li>
+                    <li class="list-group-item border-0 bg-primary">Temp: <span id="temp1"></span> °F</li>
+                    <li class="list-group-item border-0 bg-primary">Humidity: <span id="humid1"></span> %</li>
+                </div>
 
-    <!-- link to my script.js file -->
-    <script src="script.js"></script>
+                <div class="card">
+                    <li class="list-group-item border-0 bg-primary"><span class="date"></span></li>
+                    <li class="list-group-item border-0 bg-primary"><span id="day2"></span></li>
+                    <li class="list-group-item border-0 bg-primary"><span id="icon2"></span></li>
+                    <li class="list-group-item border-0 bg-primary">Temp: <span id="temp2"></span> °F</li>
+                    <li class="list-group-item border-0 bg-primary">Humidity: <span id="humid2"></span> %</li>
+                </div>
+
+                <div class="card">
+                    <li class="list-group-item border-0 bg-primary"><span class="date"></span></li>
+                    <li class="list-group-item border-0 bg-primary"><span id="day3"></span></li>
+                    <li class="list-group-item border-0 bg-primary"><span id="icon3"></span></li>
+                    <li class="list-group-item border-0 bg-primary">Temp: <span id="temp3"></span> °F</li>
+                    <li class="list-group-item border-0 bg-primary">Humidity: <span id="humid3"></span> %</li>
+                </div>
+
+                <div class="card">
+                    <li class="list-group-item border-0 bg-primary"><span class="date"></span></li>
+                    <li class="list-group-item border-0 bg-primary"><span id="day4"></span></li>
+                    <li class="list-group-item border-0 bg-primary"><span id="icon4"></span></li>
+                    <li class="list-group-item border-0 bg-primary">Temp: <span id="temp4"></span> °F</li>
+                    <li class="list-group-item border-0 bg-primary">Humidity: <span id="humid4"></span> %</li>
+                </div>
+
+                <div class="card">
+                    <li class="list-group-item border-0 bg-primary"><span class="date"></span></li>
+                    <li class="list-group-item border-0 bg-primary"><span id="day5"></span></li>
+                    <li class="list-group-item border-0 bg-primary"><span id="icon5"></span></li>
+                    <li class="list-group-item border-0 bg-primary">Temp: <span id="temp5"></span> °F</li>
+                    <li class="list-group-item border-0 bg-primary">Humidity: <span id="humid5"></span> %</li>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script defer src="script.js"></script>
+
 </body>
 
 </html>
